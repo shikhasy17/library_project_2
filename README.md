@@ -1,6 +1,7 @@
 # Library Management System using SQL Project 2
 # Project Overview
-#Project Title: Library Management System
+Project Title: Library Management System
+
 Designed and implemented a relational SQL database system to simulate real-world library operations and generate business-driven analytical insights.
 
 # This project focuses on:
