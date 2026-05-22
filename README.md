@@ -1,25 +1,21 @@
 # Library Management System using SQL Project 2
-# Project Overview
-* Project Title: Library Management System
+## Project Overview
+* **Project Title:** Library Management System
 * Designed and implemented a relational SQL database system to simulate real-world library operations and generate business-driven analytical insights.
 
 # This project focuses on:
-* •	Relational database architecture
-* •	Operational data analysis
-* •	SQL-based reporting workflows
-* •	Business KPI generation
-* •	Data integrity & normalization
+* Relational database architecture
+* Operational data analysis
+* SQL-based reporting workflows
+* Business KPI generation
+* Data integrity & normalization
 
 # The system enables efficient tracking of:
-•	Book inventory
-
-•	Member activity
-
-•	Employee operations
-
-•	Issue/return transactions
-
-•	Branch-level performance
+*Book inventory
+Member activity
+Employee operations
+Issue/return transactions
+Branch-level performance
 
 # Business Objective
 Organizations handling large transactional datasets require structured database systems to:
