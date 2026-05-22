@@ -42,6 +42,7 @@ Organizations handling large transactional datasets require structured database 
 This project demonstrates how SQL can be used to transform raw operational data into actionable business insights.
 
 # Project Structure
+
 1.	Database Setup
 
 <img width="1047" height="672" alt="library_erd" src="https://github.com/user-attachments/assets/4ed1b45b-733c-49e3-8cb2-596786ee04a3" />
@@ -61,33 +62,47 @@ CREATE TABLE branch
 
 (
 
-            branch_id VARCHAR(10) PRIMARY KEY,
+branch_id VARCHAR(10) PRIMARY KEY,
 			
-            manager_id VARCHAR(10),
+ manager_id VARCHAR(10),
 			
-            branch_address VARCHAR(30),
+branch_address VARCHAR(30),
 			
-            contact_no VARCHAR(15)
+contact_no VARCHAR(15)
 			
 );
 
+
 ALTER TABLE branch
+
 
 ALTER COLUMN contact_no TYPE varchar(20);
 
 
 
+
 -- Create table "Employee"
+
 DROP TABLE IF EXISTS employees;
+
 CREATE TABLE employees
+
 (
+            
             emp_id VARCHAR(10) PRIMARY KEY,
+
             emp_name VARCHAR(30),
+			
             position VARCHAR(30),
+			
             salary DECIMAL(10,2),
+			
             branch_id VARCHAR(10),
+			
             FOREIGN KEY (branch_id) REFERENCES  branch(branch_id)
+			
 );
+
 
 ALTER TABLE employees
 ALTER COLUMN salary TYPE float;
