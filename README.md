@@ -6,9 +6,13 @@ Designed and implemented a relational SQL database system to simulate real-world
 
 # This project focuses on:
 •	Relational database architecture
+
 •	Operational data analysis
+
 •	SQL-based reporting workflows
+
 •	Business KPI generation
+
 •	Data integrity & normalization
 
 # The system enables efficient tracking of:
