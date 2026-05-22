@@ -17,18 +17,28 @@ Designed and implemented a relational SQL database system to simulate real-world
 
 # The system enables efficient tracking of:
 •	Book inventory
+
 •	Member activity
+
 •	Employee operations
+
 •	Issue/return transactions
+
 •	Branch-level performance
 
 # Business Objective
 Organizations handling large transactional datasets require structured database systems to:
+
 •	Maintain operational consistency
+
 •	Reduce manual tracking overhead
+
 •	Monitor performance metrics
+
 •	Generate analytical reports
+
 •	Improve decision-making efficiency
+
 This project demonstrates how SQL can be used to transform raw operational data into actionable business insights.
 
 # Project Structure
@@ -40,20 +50,31 @@ This project demonstrates how SQL can be used to transform raw operational data 
  
 
 •	Database Creation: Created a database named library_db.
+
 •	Table Creation: Created tables for branches, employees, members, books, issued status, and return status. Each table includes relevant columns and relationships.
 
 -- Create table "Branch"
+
 DROP TABLE IF EXISTS branch;
+
 CREATE TABLE branch
+
 (
+
             branch_id VARCHAR(10) PRIMARY KEY,
+			
             manager_id VARCHAR(10),
+			
             branch_address VARCHAR(30),
+			
             contact_no VARCHAR(15)
+			
 );
 
 ALTER TABLE branch
+
 ALTER COLUMN contact_no TYPE varchar(20);
+
 
 
 -- Create table "Employee"
