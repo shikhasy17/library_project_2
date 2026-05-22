@@ -1,23 +1,23 @@
-**# Library Management System using SQL Project 2**
-**# Project Overview**
-**# Project Title: Library Management System**
+# Library Management System using SQL Project 2
+# Project Overview
+# Project Title: Library Management System
 Designed and implemented a relational SQL database system to simulate real-world library operations and generate business-driven analytical insights.
 
-**# This project focuses on:**
+# This project focuses on:
 •	Relational database architecture
 •	Operational data analysis
 •	SQL-based reporting workflows
 •	Business KPI generation
 •	Data integrity & normalization
 
-**# The system enables efficient tracking of:**
+# The system enables efficient tracking of:
 •	Book inventory
 •	Member activity
 •	Employee operations
 •	Issue/return transactions
 •	Branch-level performance
 
-**# Business Objective**
+# Business Objective
 Organizations handling large transactional datasets require structured database systems to:
 •	Maintain operational consistency
 •	Reduce manual tracking overhead
@@ -26,7 +26,7 @@ Organizations handling large transactional datasets require structured database 
 •	Improve decision-making efficiency
 This project demonstrates how SQL can be used to transform raw operational data into actionable business insights.
 
-**# Project Structure**
+# Project Structure
 1.	Database Setup
 
 <img width="1047" height="672" alt="library_erd" src="https://github.com/user-attachments/assets/4ed1b45b-733c-49e3-8cb2-596786ee04a3" />
@@ -37,7 +37,7 @@ This project demonstrates how SQL can be used to transform raw operational data 
 •	Database Creation: Created a database named library_db.
 •	Table Creation: Created tables for branches, employees, members, books, issued status, and return status. Each table includes relevant columns and relationships.
 
-# -- Create table "Branch"
+-- Create table "Branch"
 DROP TABLE IF EXISTS branch;
 CREATE TABLE branch
 (
@@ -51,7 +51,7 @@ ALTER TABLE branch
 ALTER COLUMN contact_no TYPE varchar(20);
 
 
-# -- Create table "Employee"
+-- Create table "Employee"
 DROP TABLE IF EXISTS employees;
 CREATE TABLE employees
 (
@@ -68,7 +68,7 @@ ALTER COLUMN salary TYPE float;
 
 
 
-# -- Create table "Members"
+-- Create table "Members"
 DROP TABLE IF EXISTS members;
 CREATE TABLE members
 (
@@ -79,7 +79,7 @@ CREATE TABLE members
 );
 
 
-# -- Create table "Books"
+-- Create table "Books"
 DROP TABLE IF EXISTS books;
 CREATE TABLE books
 (
@@ -97,7 +97,7 @@ ALTER COLUMN category TYPE varchar(50);
 
 
 
-# -- Create table "IssueStatus"
+-- Create table "IssueStatus"
 DROP TABLE IF EXISTS issued_status;
 CREATE TABLE issued_status
 (
@@ -114,7 +114,7 @@ CREATE TABLE issued_status
 
 
 
-# -- Create table "ReturnStatus"
+-- Create table "ReturnStatus"
 DROP TABLE IF EXISTS return_status;
 CREATE TABLE return_status
 (
@@ -127,7 +127,7 @@ CREATE TABLE return_status
 );
 
 
-# -- Foreign key
+-- Foreign key
 ALTER TABLE issued_status
 ADD CONSTRAINT fk_members
 FOREIGN KEY(issued_member_id)
@@ -175,7 +175,7 @@ VALUES
 SELECT * FROM members;
 
 
-# -- Insert values into each branch table
+-- Insert values into each branch table
 INSERT INTO branch(branch_id, manager_id, branch_address, contact_no) 
 VALUES
 ('B001', 'E109', '123 Main St', '+919099988676'),
@@ -186,7 +186,7 @@ VALUES
 SELECT * FROM branch;
 
 
-# -- Insert values into each employees table
+-- Insert values into each employees table
 INSERT INTO employees(emp_id, emp_name, position, salary, branch_id) 
 VALUES
 ('E101', 'John Doe', 'Clerk', 60000.00, 'B001'),
@@ -203,7 +203,7 @@ VALUES
 SELECT * FROM employees;
 
 
-# -- Inserting into books table 
+-- Inserting into books table 
 INSERT INTO books(isbn, book_title, category, rental_price, status, author, publisher) 
 VALUES
 ('978-0-553-29698-2', 'The Catcher in the Rye', 'Classic', 7.00, 'yes', 'J.D. Salinger', 'Little, Brown and Company'),
@@ -243,7 +243,7 @@ VALUES
 ('978-0-7432-7356-4', 'The Hobbit', 'Fantasy', 7.00, 'yes', 'J.R.R. Tolkien', 'Houghton Mifflin Harcourt');
 SELECT * FROM books;
 
-# -- inserting into issued table
+-- inserting into issued table
 INSERT INTO issued_status(issued_id, issued_member_id, issued_book_name, issued_date, issued_book_isbn, issued_emp_id) 
 VALUES
 ('IS106', 'C106', 'Animal Farm', '2024-03-10', '978-0-330-25864-8', 'E104'),
@@ -284,7 +284,7 @@ VALUES
 SELECT * FROM issued_status;
 
 
-# -- inserting into return table
+-- inserting into return table
 INSERT INTO return_status(return_id, issued_id, return_date) 
 VALUES
 ('RS106', 'IS108', '2024-05-05'),
@@ -315,17 +315,17 @@ SELECT * FROM members;
 
 
 
-# -- CRUD Operations
+-- CRUD Operations
 
 
-# -- Task 1: Create a New Book Record "978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'Harper Lee', 'J.B. Lippincott & Co.')"
+-- Task 1: Create a New Book Record "978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'Harper Lee', 'J.B. Lippincott & Co.')"
 
 INSERT INTO books(isbn, book_title, category, rental_price, status, author, publisher)
 VALUES
 ('978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'Harper Lee', 'J.B. Lippincott & Co.');
 SELECT * FROM books;
 
-# -- Task 2: Update an Existing Member's Address
+-- Task 2: Update an Existing Member's Address
 
 UPDATE members
 SET member_address = '125 Main St'
@@ -333,21 +333,21 @@ WHERE member_id = 'C101';
 SELECT * FROM members;
 
 
-# -- Task 3: Delete a Record from the Issued Status Table. Objective: Delete the record with issued_id = 'IS121' from the issued_status table.
+-- Task 3: Delete a Record from the Issued Status Table. Objective: Delete the record with issued_id = 'IS121' from the issued_status table.
 
 SELECT * FROM issued_status;
 DELETE FROM issued_status
 WHERE issued_id = 'IS121'
 
 
-# -- Task 4: Retrieve All Books Issued by a Specific Employee. Objective: Select all books issued by the employee with emp_id = 'E101'.
+-- Task 4: Retrieve All Books Issued by a Specific Employee. Objective: Select all books issued by the employee with emp_id = 'E101'.
 
 SELECT * FROM issued_status
 WHERE issued_emp_id = 'E101';
 
 
 
-# -- Task 5: List Members Who Have Issued More Than One Book. Objective: Use GROUP BY to find members who have issued more than one book.
+-- Task 5: List Members Who Have Issued More Than One Book. Objective: Use GROUP BY to find members who have issued more than one book.
 
 SELECT * FROM issued_status;
 
@@ -360,7 +360,7 @@ HAVING COUNT(issued_id)>1
 
 -- ## CTAS (Create Table As Select)
 
-# -- Task 6: Create Summary Tables**: Used CTAS to generate new tables based on query results - each book and total book_issued_cnt
+-- Task 6: Create Summary Tables**: Used CTAS to generate new tables based on query results - each book and total book_issued_cnt
 
 CREATE TABLE book_cnts
 AS    
