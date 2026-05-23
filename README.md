@@ -16,6 +16,9 @@ This project demonstrates the implementation of a Library Management System usin
 
 ## Project Structure
 
+<img width="1047" height="672" alt="library_erd" src="https://github.com/user-attachments/assets/39cb588a-7940-4b9e-9c91-1d90a5906d53" />
+
+
 ### 1. Database Setup
 
  
